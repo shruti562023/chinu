@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Slider</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+       background-color: #0b1a33;
+      color: white;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #0b1a33;
+      padding: 50px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bfff;
+    }
+
+    /* ===== PROJECT SECTION ===== */
+    h2 {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .highlight {
+      color: #00bfff;
+    }
+
+    .intro-text {
+      text-align: center;
+      margin: 10px auto 40px;
+      width: 70%;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .projects {
+      width: 80%;
+      margin: 40px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .slide img {
+      width: 100%;
+      max-height: 350px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .caption {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .project-name {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* Dots */
+    .dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .active {
+      background-color: teal;
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: teal;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">Portfolio</div>
+    <nav>
+   <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li> 
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== PROJECT SLIDER ===== -->
+  <section id="projects">
+    <h2><span class="highlight">My</span> Projects</h2>
+    <p class="intro-text">A project is a temporary, goal-oriented effort undertaken to create a unique product, service, or result within specified constraints of scope, time, and resources.</p>
+
+    <div class="projects">
+      <div class="slider" id="slider">
+        <div class="slide">
+          <img src="https://via.placeholder.com/800x350/6a11cb/fafafa?text=Website+Design+1" alt="Project 1">
+          <p class="caption">"A beautiful website design project showcasing creativity and functionality."</p>
+          <p class="project-name">Dharam Technology</p>
+        </div>
+        <div class="slide">
+          <img src="https://via.placeholder.com/800x350/f83600/fafafa?text=E-Commerce+Project" alt="Project 2">
+          <p class="caption">"An e-commerce platform built with modern technologies for smooth shopping."</p>
+          <p class="project-name">Shopping Cart</p>
+        </div>
+        <div class="slide">
+          <img src="image/profilepic.jpg" alt="Project 3">
+          <p class="caption">"A responsive personal portfolio website built with HTML, CSS, and JS."</p>
+          <p class="project-name">Portfolio Project</p>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <span class="arrow left" onclick="moveSlide(-1)">&#10094;</span>
+      <span class="arrow right" onclick="moveSlide(1)">&#10095;</span>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    const slider = document.getElementById("slider");
+
+    function updateSlide() {
+      slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[currentIndex].classList.add("active");
+    }
+
+    function moveSlide(step) {
+      currentIndex = (currentIndex + step + slides.length) % slides.length;
+      updateSlide();
+    }
+
+    function currentSlide(index) {
+      currentIndex = index;
+      updateSlide();
+    }
+
+    // Auto-slide every 4 seconds
+    setInterval(() => {
+      moveSlide(1);
+    }, 4000);
+  </script>
+</body>
+</html>

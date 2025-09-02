@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #0a192f;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /*header*/
+        header {
+      width: 100%;
+      padding: 50px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0a192f;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bfff;
+    }
+
+    /*home*/
+
+    .hero {
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      color: #00bfff;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .buttons a {
+      padding: 10px 20px;
+      border: 2px solid #00bfff;
+      border-radius: 5px;
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #00bfff;
+      color: #0a192f;
+    }
+
+    .hero-img img {
+      width: 350px;
+      border-radius: 10px;
+    }
+
+    
+.social {
+    display: flex;
+}
+ .social a {
+  margin-top: 30px;
+    background:wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-right: 0.6rem;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+
+ .social a:hover {
+    background: var(--primary);
+}
+ .social a img {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+    <div class="logo">Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li> 
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm Sandeep Patel</h1>
+      <h2>Frontend Developer</h2>
+      <p>Frontend Developer with a strong foundation in HTML, CSS, JavaScript, and modern frameworks like React. Skilled in creating responsive, user-friendly interfaces and improving website performance. Passionate about UI/UX design, clean code, and continuous learning in web technologies.</p>
+      <div class="buttons">
+        <a href="#">Hire Me</a>
+        <a href="#">Let's Talk</a>
+      </div>
+      <div class="social">
+                        <a href="https://www.linkedin.com/in/sandeep-patel-aa756b2ba/"><img src="image/linkedin.png" alt=""></a>
+                        <a href="https://github.com/Sandy9630"><img src="image/github.webp" alt=""></a>
+                        <a href="https://wa.me/qr/YGBRY4BQCDGPB1"> <img src="image/whatsapp.png" alt=""></a>
+                        <a href="https://www.instagram.com/sandeep_c5?utm_source=qr&igsh=OXdsYmdpMTlvZHp0"> <img src="image/instragram.png" alt=""></a>
+                    </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="image/profilepic.jpg" alt="Profile Image">
+    </div>
+  </section>
+</body>
+</html>

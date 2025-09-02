@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #0a192f;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /*header*/
+        header {
+      width: 100%;
+     padding: 50px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0a192f;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bfff;
+    }
+
+    /*about*/
+    span{
+
+      color:  #00bfff;;
+    }
+    .about-section {
+      max-width: 2000px;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .about-img img {
+      width: 400px;
+      height: 430px;
+      border-radius: 15px;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-content h2 {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 5px;
+      color: #aaa;
+    }
+
+    .about-content h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .info-cards {
+      display: flex;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+     <header>
+    <div class="logo">Portfolio</div>
+    <nav>
+      <ul>
+     <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li> 
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="about-section">
+    <!-- Profile Image -->
+    <div class="about-img">
+      <img src="image/coding.jpeg" alt="Profile">
+    </div>
+
+    <!-- About Content -->
+    <div class="about-content">
+      <h2>Introduction</h2>
+      <h1><span>About</span> me</h1>
+      <p>
+    I am from satna . I Completed my graduation from sage university with 8.42 CGPA. My technical skills is WordPress, HTML5, CSS3, JavaScript, Core Java, SQL, C Programming , Git and GitHub. A passionate and creative Frontend Developer dedicated to building clean, user-friendly, and visually appealing web interfaces. With a strong foundation in HTML, CSS, JavaScript, and modern frontend frameworks, I turn ideas into responsive and engaging digital experiences. I enjoy transforming designs into code and making sure everything works beautifully across different devices.
+
+
+      </p>
+
+      <!-- Info Cards -->
+      <div class="info-cards">
+        <div class="card">
+          <h3>Skills</h3>
+          <p>HTML, CSS, JavaScript<br>SQL, Core Java<br>
+          Git , GitHub</p>
+        </div>
+        <div class="card">
+          <h3>Education</h3>
+          <p>B.Tech in Computer Science 2021-2025 <br>
+          </p>
+        
+        </div>
+        <div class="card">
+          <h3>Projects</h3>
+          <p>Built more than 3 projects :<br> IT Website <br>  Portfolio <br>Ecommerce website</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
